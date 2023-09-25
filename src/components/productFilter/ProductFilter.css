@@ -1,0 +1,39 @@
+.productFilter {
+  padding: 5vh 6vh 0vh 0vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.filterItems {
+  font-family: 'DM SANS', sans-serif;
+  font-size: 4vh;
+}
+
+.activeFilter {
+  opacity: 0.5;
+}
+
+.filterDropdownContainer {
+  position: absolute;
+  top: 0vh;
+  background-color: white;
+  padding: 1vh;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transform: translateY(60%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 1;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(90%);
+  pointer-events: auto;
+}

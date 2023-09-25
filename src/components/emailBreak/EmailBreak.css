@@ -1,0 +1,9 @@
+#emailBreak {
+  background-color: #FFF7D9;
+  color: #cf5854;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0vh 10vh;
+}

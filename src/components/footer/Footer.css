@@ -1,0 +1,27 @@
+.footerContainer {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 4vh;
+  padding: 2vh 0vh;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5vh;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+.copyright {
+  font-size: 1.5vh;
+}

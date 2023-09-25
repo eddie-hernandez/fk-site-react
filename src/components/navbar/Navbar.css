@@ -1,0 +1,31 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2vh 0vh;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 2vh;
+  position: sticky;
+  z-index: 9999;
+  top: -1px;
+  background-color: #d8d5c8;
+  /* border: solid black;
+  border-width: 2px 0; */
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10vh;
+}
+
+.cart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15vh;
+}
+
+.cart-icon {
+  width: 4vh;
+}

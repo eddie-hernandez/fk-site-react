@@ -1,0 +1,164 @@
+[
+  {
+    "id": "fredAgain",
+    "imageSrc": "/kits/electronic/fredagain-transparent.png",
+    "title": "THE FRED AGAIN SHIRT",
+    "collection": "THE ELECTRONIC DANCE COLLECTION",
+    "availableSizes": [],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "channelOrange",
+    "imageSrc": "/kits/frank/CO-transparent.png",
+    "title": "THE CHANNEL ORANGE JERSEY",
+    "collection": "THE FRANK OCEAN COLLECTION",
+    "availableSizes": [],
+    "productType": "JERSEY",
+    "price": 150
+  },
+  {
+    "id": "okayKaya",
+    "imageSrc": "/kits/rnb/okaykaya-transparent.png",
+    "title": "THE OKAY KAYA SHIRT",
+    "collection": "THE R&B COLLECTION",
+    "availableSizes": ["L", "XL"],
+    "productType": "SHIRT",
+    "price": 150
+  },
+  {
+    "id": "badTuner",
+    "imageSrc": "/kits/electronic/badtuner-transparent.png",
+    "title": "THE BAD TUNER SHIRT",
+    "collection": "THE ELECTRONIC DANCE COLLECTION",
+    "availableSizes": ["S", "M", "L", "XL"],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "blonde",
+    "imageSrc": "/kits/frank/blonde-transparent.png",
+    "title": "THE BLONDE JERSEY",
+    "collection": "THE FRANK OCEAN COLLECTION",
+    "availableSizes": [],
+    "productType": "JERSEY",
+    "price": 150
+  },
+  {
+    "id": "cure",
+    "imageSrc": "/kits/rock/cure-transparent.png",
+    "title": "THE CURE JACKET",
+    "collection": "THE CLASSIC ROCK COLLECTION",
+    "availableSizes": [],
+    "productType": "JACKET",
+    "price": 175
+  },
+  {
+    "id": "calvinHarris",
+    "imageSrc": "/kits/electronic/calvinharris-transparent.png",
+    "title": "THE CALVIN HARRIS SHIRT",
+    "collection": "THE ELECTRONIC DANCE COLLECTION",
+    "availableSizes": ["L", "XL"],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "korn",
+    "imageSrc": "/kits/rock/korn-transparent.png",
+    "title": "THE KORN SHIRT",
+    "collection": "THE HARD ROCK COLLECTION",
+    "availableSizes": ["M"],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "inRainbows",
+    "imageSrc": "/kits/rock/inrainbows-transparent.png",
+    "title": "THE IN RAINBOWS JERSEY (ALL-OVER PRINT)",
+    "collection": "THE INDIE ROCK COLLECTION",
+    "availableSizes": ["S", "M", "L", "XL"],
+    "productType": "JERSEY",
+    "price": 150
+  },
+  {
+    "id": "sade",
+    "imageSrc": "/kits/rnb/sade-transparent.png",
+    "title": "THE SADE SHIRT",
+    "collection": "THE R&B COLLECTION",
+    "availableSizes": ["S", "XL"],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "talkingHeads",
+    "imageSrc": "/kits/rock/talkingheads-transparent.png",
+    "title": "THE TALKING HEADS KIT",
+    "collection": "THE CLASSIC ROCK COLLECTION",
+    "availableSizes": ["S", "L"],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "frankShirt",
+    "imageSrc": "/kits/frank/FK FO - transparent.png",
+    "title": "THE FRANK HEADS TEE",
+    "collection": "THE FRANK OCEAN COLLECTION",
+    "availableSizes": ["S", "M", "L", "XL"],
+    "productType": "SHIRT",
+    "price": 50
+  },
+  {
+    "id": "knife",
+    "imageSrc": "/kits/indie/knife-transparent.png",
+    "title": "THE KNIFE SHIRT",
+    "collection": "THE INDIE ROCK COLLECTION",
+    "availableSizes": ["S", "M", "L"],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "parquetCourts",
+    "imageSrc": "/kits/indie/parquetcourts-transparent.png",
+    "title": "THE PARQUET COURTS JERSEY",
+    "collection": "THE INDIE ROCK COLLECTION",
+    "availableSizes": ["S", "L", "XL"],
+    "productType": "JERSEY",
+    "price": 150
+  },
+  {
+    "id": "fayeWebster",
+    "imageSrc": "/kits/indie/fayewebster-transparent.png",
+    "title": "THE FAYE WEBSTER SHIRT",
+    "collection": "THE INDIE ROCK COLLECTION",
+    "availableSizes": ["XL"],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "sunny",
+    "imageSrc": "/kits/misc/sunny-transparent.png",
+    "title": "THE ALWAYS SUNNY SHIRT",
+    "collection": "THE FILM AND TELEVISION COLLECTION",
+    "availableSizes": ["L"],
+    "productType": "SHIRT",
+    "price": 125
+  },
+  {
+    "id": "justice",
+    "imageSrc": "/kits/electronic/justice-transparent.png",
+    "title": "THE JUSTICE JERSEY",
+    "collection": "THE ELECTRONIC DANCE COLLECTION",
+    "availableSizes": ["S", "XL"],
+    "productType": "JERSEY",
+    "price": 150
+  },
+  {
+    "id": "pinkFloyd",
+    "imageSrc": "/kits/rock/pinkfloyd-transparent.png",
+    "title": "THE PINK FLOYD SHIRT",
+    "collection": "THE CLASSIC ROCK COLLECTION",
+    "availableSizes": ["S", "M", "XL"],
+    "productType": "SHIRT",
+    "price": 125
+  }
+]

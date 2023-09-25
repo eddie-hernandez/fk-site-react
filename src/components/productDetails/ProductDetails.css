@@ -1,0 +1,98 @@
+.productDetails {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10vh;
+}
+
+.detailedProductImg {
+  height: 60vh;
+}
+
+.detailedProductTitle {
+  font-family: 'DM SANS', sans-serif;
+  font-weight: bold;
+  font-size: 3vh;
+  font-style: italic;
+}
+
+.detailedProductPrice {
+  font-family: 'DM SANS', sans-serif;
+  font-weight: bold;
+  font-size: 3vh;
+  font-style: italic;
+}
+
+.sizeContainer {
+  font-family: 'DM SANS', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8vh 0vh 2vh 0vh;
+  column-gap: 3vh;
+}
+
+.sizeTitle {
+  font-size: 3vh;
+}
+
+.sizeLabel {
+  font-size: 4vh;
+  font-weight: 500;
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  padding: 1vh;
+}
+
+.selected {
+  border-color: blue;
+  border-radius: 50px;
+}
+
+.unavailable {
+  color: gray;
+  cursor: not-allowed;
+}
+
+.sizeLabelContainer {
+  position: relative;
+}
+
+.none {
+  width: 5vh;
+  height: 0.5vh;
+  background-color: rgb(78, 78, 78);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(60deg);
+  opacity: 0.75;
+}
+
+.addToCart {
+  background-color: transparent;
+  border: 0px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 3vh;
+  font-weight: 900;
+  -webkit-text-stroke: 0.25vh;
+  margin-bottom: 3vh;
+}
+
+.otherInfo {
+  background-color: transparent;
+  border: 0px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.75vh;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: 600;
+  color: dimgray;
+}
+
+.otherInfoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 4vh;
+}

@@ -1,0 +1,39 @@
+.latestCollectionContainer {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5vh;
+  margin-bottom: 10vh;
+}
+
+.pageTitle {
+  font-family: 'DM SANS', sans-serif;
+  font-size: 7vh;
+  text-decoration: underline;
+  line-height: 100px;
+  font-weight: 1000;
+  text-align: left;
+  padding: 5vh 0vh 0vh 6vh;
+}
+
+.collectionTitle {
+  font-family: 'DM SANS', sans-serif;
+  font-size: 5vh;
+  line-height: 100px;
+  font-weight: 1000;
+  -webkit-text-stroke: 0.25vh;
+}
+
+.selectorIcon {
+  height: 8vh;
+  width: 8vh;
+  margin-top: 10vh;
+}
+
+.collectionContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10vh;
+}

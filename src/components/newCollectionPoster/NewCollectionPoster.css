@@ -1,0 +1,62 @@
+.posterContainer {
+  height: auto;
+  width: auto;
+  background-color: #664B83;
+  font-family: 'DM Sans', sans-serif;
+  color: white;
+}
+
+.posterTitle {
+  padding-top: 2vh;
+  font-size: 12vh;
+  line-height: 100px;
+  font-weight: 1000;
+}
+
+.posterSubtitle {
+  font-size: 8vh;
+  line-height: 100px;
+  font-weight: 1000;
+  text-decoration: underline;
+  letter-spacing: -2px;
+  padding-bottom: 5vh;
+  -webkit-text-stroke: 0.3vh;
+}
+
+.shirtImg {
+  height: 50vh;
+}
+
+.shirtContainer {
+  height: 100vh;
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5vh;
+}
+
+#coKit {
+  position: relative;
+  top: -25vh;
+  right: 0vh;
+}
+
+#blondeKit {
+  position: relative;
+  top: -18vh;
+  left: 45vh;
+}
+
+#frankTee {
+  position: relative;
+  top: 20vh;
+  right: 55vh;
+}
+
+.shirtTitle {
+  font-size: 2.25vh;
+  font-weight: 600;
+  text-decoration: underline;
+  color: white;
+}

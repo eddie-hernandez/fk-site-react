@@ -1,0 +1,12 @@
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.allProductsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 5vh;
+  margin-bottom: 10vh;
+}
