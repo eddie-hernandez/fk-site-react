@@ -13,11 +13,9 @@
   font-weight: 1000;
   text-align: left;
   padding-left: 9vh;
-  position: relative;
 }
 
 .collectionComponentContainer {
-  position: relative;
   padding: 5vh 0vh 10vh 0vh;
 }
 

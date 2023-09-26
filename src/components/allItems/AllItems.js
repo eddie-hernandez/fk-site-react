@@ -71,8 +71,14 @@ export default function AllItems() {
 
   return (
     <div className="collectionComponentContainer">
-      <div className="pageHeader">
+      <div className="pageTitleContainer">
         <h2 className="pageTitle">ALL ITEMS</h2>
+      </div>
+      <div
+        className={`filterItemsContainer ${
+          isFilterClicked ? 'stickyFilter' : ''
+        }`}
+      >
         <h6
           className={`filterItems clickable ${
             isFilterClicked ? 'activeFilter' : ''
