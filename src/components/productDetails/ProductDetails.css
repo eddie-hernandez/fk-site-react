@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   column-gap: 10vh;
+  margin-bottom: 10vh;
 }
 
 .detailedProductImg {
@@ -10,21 +11,18 @@
 }
 
 .detailedProductTitle {
-  font-family: 'DM SANS', sans-serif;
   font-weight: bold;
   font-size: 3vh;
   font-style: italic;
 }
 
 .detailedProductPrice {
-  font-family: 'DM SANS', sans-serif;
   font-weight: bold;
   font-size: 3vh;
   font-style: italic;
 }
 
 .sizeContainer {
-  font-family: 'DM SANS', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +70,6 @@
 .addToCart {
   background-color: transparent;
   border: 0px;
-  font-family: 'DM Sans', sans-serif;
   font-size: 3vh;
   font-weight: 900;
   -webkit-text-stroke: 0.25vh;
@@ -82,7 +79,6 @@
 .otherInfo {
   background-color: transparent;
   border: 0px;
-  font-family: 'DM Sans', sans-serif;
   font-size: 1.75vh;
   text-decoration: underline;
   font-style: italic;

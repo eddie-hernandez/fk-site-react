@@ -123,7 +123,7 @@ export default function ProductDetails() {
         >
           {availableSizes.length === 0 ? 'SOLD OUT' : 'ADD TO CART'}
         </button>
-        <div className='otherInfoContainer'>
+        <div className="otherInfoContainer">
           <button className="otherInfo clickable">WASH INSTRUCTIONS</button>
           <button className="otherInfo clickable">MEASUREMENT GUIDE</button>
         </div>

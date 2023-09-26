@@ -1,39 +1,72 @@
-.productFilter {
-  padding: 5vh 6vh 0vh 0vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-
-.filterItems {
-  font-family: 'DM SANS', sans-serif;
-  font-size: 4vh;
-}
-
-.activeFilter {
-  opacity: 0.5;
-}
-
 .filterDropdownContainer {
-  position: absolute;
-  top: 0vh;
-  background-color: white;
-  padding: 1vh;
-  border: 2px solid black;
-  border-radius: 5px;
+  position: sticky;
+  top: 14vh;
+  left: 0;
+  right: 0;
+  background-color: rgb(255, 176, 133);
+  padding: 1vh 0vh 1vh 6vh;
+  border: solid black;
+  border-width: 3px 0px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transform: translateY(60%);
-  transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 5vh;
+  transform: translateY(-50%);
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease;
   pointer-events: none;
   opacity: 0;
   z-index: 1;
 }
 
+.filterInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5vh 0vh;
+  column-gap: 2vh;
+  margin: 0vh 5vh 0vh 5vh;
+}
+
+.filterOptions {
+  font-size: 3vh;
+}
+
+.resetFilters {
+  background-color: transparent;
+  border: 0px;
+  font-size: 2vh;
+  text-decoration: underline;
+}
+
+.filterLabel {
+  font-size: 2.5vh;
+  font-weight: 700;
+}
+
+.filtersWrapper {
+  flex-grow: 0.5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterSeparator {
+  width: 2px;
+  height: 3vh;
+  background-color: black;
+}
+
 .active {
   opacity: 1;
-  transform: translateY(90%);
+  transform: translateY(0%);
   pointer-events: auto;
 }

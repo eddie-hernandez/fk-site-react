@@ -6,7 +6,7 @@ import SectionBreak from '../../components/sectionBreak/SectionBreak'
 
 export default function Shop() {
   return (
-    <div>
+    <div className='shopPage'>
       <AllItems />
       <EmailBreak />
       <SectionBreak />

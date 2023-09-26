@@ -2,11 +2,10 @@
   display: flex;
   justify-content: space-around;
   padding: 2vh 0vh;
-  font-family: 'Lexend Deca', sans-serif;
   font-size: 2vh;
   position: sticky;
   z-index: 9999;
-  top: -1px;
+  top: 0px;
   background-color: #d8d5c8;
   /* border: solid black;
   border-width: 2px 0; */

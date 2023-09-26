@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
-import { Routes, Route} from 'react-router-dom'
 import './App.css'
 
 // importing components
@@ -18,28 +18,28 @@ import Shop from './pages/shop/Shop'
 import Home from './pages/home/Home'
 
 export default function App() {
-const location = useLocation()
+  const { pathname } = useLocation()
 
   useEffect(() => {
-    console.log(location.pathname)
-    window.scrollTo(0, 0);
-  }, [location.pathname])
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant'
+    });
+  }, [pathname]);
 
   return (
     <div className="App">
       <ScrollerText />
       <Navbar />
       <Routes>
-        {/* Establishing routes */}
+        {/* establishing routes */}
         <Route path="/" element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/archive" element={<Archive />}></Route>
         <Route path="/about" element={<About />}></Route>
-        <Route
-          path="/shop/:productId"
-          element={<Product />}
-        />
+        <Route path="/shop/:productId" element={<Product />} />
         {/* catch all / page not found */}
         <Route path="*" element={<NotFound />} />
       </Routes>
