@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './LatestCollection.css'
 import { Link } from 'react-router-dom'
 import Rewind from '../../assets/icons/rewind.svg'
@@ -6,98 +6,164 @@ import Forward from '../../assets/icons/forward.svg'
 import products from '../../products.json'
 
 export default function LatestCollection() {
+  const [screenSize, setScreenSize] = useState('')
+  const [itemsPerPage, setItemsPerPage] = useState(3)
+
+  // extracting all collections from products.json
+  const uniqueCollections = Array.from(
+    new Set(products.map((product) => product.collection))
+  )
+
+  const initialCollections = uniqueCollections.map((collectionName) => ({
+    title: collectionName,
+    startIndex: 0,
+  }))
+
+  function handlePrev(collectionIndex) {
+    const newCollections = [...collections]
+    const currentStartIndex = collections[collectionIndex].startIndex
+
+    // Calculate the new start index for the collection
+    const newStartIndex = Math.max(currentStartIndex - itemsPerPage, 0)
+
+    // If there are not enough items to display 3, adjust the start index accordingly
+    if (currentStartIndex === newStartIndex && newStartIndex > 0) {
+      newCollections[collectionIndex].startIndex = newStartIndex - 1
+    } else {
+      newCollections[collectionIndex].startIndex = newStartIndex
+    }
+
+    setCollections(newCollections)
+  }
+
+  function handleNext(collectionIndex) {
+    const newCollections = [...collections]
+    const currentStartIndex = collections[collectionIndex].startIndex
+    const collectionTitle = collections[collectionIndex].title
+    const collectionItems = products.filter(
+      (product) => product.collection === collectionTitle
+    )
+
+    // calculate the new start index for the collection
+    const newStartIndex = Math.min(
+      currentStartIndex + itemsPerPage,
+      collectionItems.length - itemsPerPage
+    )
+
+    // if there are not enough items to display 3, adjust the start index accordingly
+    if (
+      currentStartIndex === newStartIndex &&
+      newStartIndex < collectionItems.length - itemsPerPage
+    ) {
+      newCollections[collectionIndex].startIndex = newStartIndex + 1
+    } else {
+      newCollections[collectionIndex].startIndex = newStartIndex
+    }
+
+    setCollections(newCollections)
+  }
+
+  function isPrevDisabled(collectionIndex) {
+    return collections[collectionIndex].startIndex === 0
+  }
+
+  function isNextDisabled(collectionIndex) {
+    return (
+      collections[collectionIndex].startIndex + itemsPerPage >=
+      products.filter(
+        (product) => product.collection === collections[collectionIndex].title
+      ).length
+    )
+  }
+
+  function isFewerProductsThanMax(collectionIndex) {
+    const collectionTitle = collections[collectionIndex].title
+    const collectionItems = products.filter(
+      (product) => product.collection === collectionTitle
+    )
+
+    return collectionItems.length < itemsPerPage
+  }
+
+  const [collections, setCollections] = useState(initialCollections)
+
+  useEffect(() => {
+    function handleResize() {
+      const width = window.innerWidth
+
+      if (width >= 1001) {
+        setScreenSize('desktop')
+        setItemsPerPage(3)
+      } else {
+        setScreenSize('mobile')
+        setItemsPerPage(2)
+      }
+    }
+
+    // Initial call to handleResize
+    handleResize()
+
+    // Listen for window resize events
+    window.addEventListener('resize', handleResize)
+
+    // Remove the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+
   return (
-    <div className='collectionComponentContainer'>
+    <div className="collectionComponentContainer">
+      <h2 className="pageTitle">SHOP THE LATEST</h2>
       <div className="latestCollectionContainer">
-        <h2 className="pageTitle">SHOP THE LATEST</h2>
-        <h3 className="collectionTitle">THE FRANK OCEAN COLLECTION.</h3>
-        <div className="collectionContainer">
-          <img src={Rewind} alt="rewind icon" className="selectorIcon" />
-          <div className="productContainer">
-            <Link to={`/shop/${products[1].id}`}>
+        {collections.map((collection, index) => (
+          <div key={index} className={`collectionContainer ${screenSize}`}>
+            <h3 className="collectionTitle">{collection.title}</h3>
+            <div className="collectionWrapper">
               <img
-                src={process.env.PUBLIC_URL + products[1].imageSrc}
-                alt="channel orange kit"
-                className="productImg clickable"
+                src={Rewind}
+                alt="rewind icon"
+                className={`selectorIcon ${
+                  isPrevDisabled(index) ? 'unavailable' : 'clickable'
+                }`}
+                onClick={() => !isPrevDisabled(index) && handlePrev(index)}
               />
-              <p className="productTitle">
-                {products[1].title}
-                <br />${products[1].price}
-              </p>
-            </Link>
-          </div>
-          <div className="productContainer">
-            <Link to={`/shop/${products[4].id}`}>
+              <div
+                className={`collectionProductsContainer ${
+                  isFewerProductsThanMax(index) ? 'centered' : 'grid'
+                }`}
+              >
+                {products
+                  .filter((product) => product.collection === collection.title)
+                  .slice(
+                    collection.startIndex,
+                    collection.startIndex + itemsPerPage
+                  )
+                  .map((product) => (
+                    <div key={product.id} className="productContainer">
+                      <Link to={`/shop/${product.id}`}>
+                        <img
+                          src={process.env.PUBLIC_URL + product.imageSrc}
+                          alt={product.title}
+                          className="productImg clickable"
+                        />
+                        <p className="productTitle">{product.title}</p>
+                        <p>${product.price}</p>
+                      </Link>
+                    </div>
+                  ))}
+              </div>
               <img
-                src={process.env.PUBLIC_URL + products[4].imageSrc}
-                alt="blonde kit"
-                className="productImg clickable"
+                src={Forward}
+                alt="forward icon"
+                className={`selectorIcon ${
+                  isNextDisabled(index) ? 'unavailable' : 'clickable'
+                }`}
+                onClick={() => !isNextDisabled(index) && handleNext(index)}
               />
-              <p className="productTitle">
-                {products[4].title}
-                <br />${products[4].price}
-              </p>
-            </Link>
+            </div>
           </div>
-          <div className="productContainer">
-            <Link to={`/shop/${products[11].id}`}>
-              <img
-                src={process.env.PUBLIC_URL + products[11].imageSrc}
-                alt="frank tee"
-                className="productImg clickable"
-              />
-              <p className="productTitle">
-                {products[11].title}
-                <br />${products[11].price}
-              </p>
-            </Link>
-          </div>
-          <img src={Forward} alt="forward icon" className="selectorIcon" />
-        </div>
-        <h3 className="collectionTitle">THE ELECTRONIC DANCE COLLECTION.</h3>
-        <div className="collectionContainer">
-          <img src={Rewind} alt="rewind icon" className="selectorIcon" />
-          <div className="productContainer">
-            <Link to={`/shop/${products[3].id}`}>
-              <img
-                src={process.env.PUBLIC_URL + products[3].imageSrc}
-                alt="bad tuner jersey"
-                className="productImg clickable"
-              />
-              <p className="productTitle">
-                {products[3].title}
-                <br />${products[3].price}
-              </p>
-            </Link>
-          </div>
-          <div className="productContainer">
-            <Link to={`/shop/${products[16].id}`}>
-              <img
-                src={process.env.PUBLIC_URL + products[16].imageSrc}
-                alt="justice jersey"
-                className="productImg clickable"
-              />
-              <p className="productTitle">
-                {products[16].title}
-                <br />${products[16].price}
-              </p>
-            </Link>
-          </div>
-          <div className="productContainer">
-            <Link to={`/shop/${products[6].id}`}>
-              <img
-                src={process.env.PUBLIC_URL + products[6].imageSrc}
-                alt="calvin harris jersey"
-                className="productImg clickable"
-              />
-              <p className="productTitle">
-                {products[6].title}
-                <br />${products[6].price}
-              </p>
-            </Link>
-          </div>
-          <img src={Forward} alt="forward icon" className="selectorIcon" />
-        </div>
+        ))}
       </div>
     </div>
   )

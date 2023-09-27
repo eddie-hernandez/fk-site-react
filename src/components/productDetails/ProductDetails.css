@@ -47,11 +47,6 @@
   border-radius: 50px;
 }
 
-.unavailable {
-  color: gray;
-  cursor: not-allowed;
-}
-
 .sizeLabelContainer {
   position: relative;
 }

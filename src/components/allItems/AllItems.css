@@ -1,6 +1,6 @@
 .allProductsContainer {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 5vh;
   margin: 5vh 0vh;
 }

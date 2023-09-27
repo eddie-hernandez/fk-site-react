@@ -31,7 +31,7 @@ export default function ProductFilter({
       ref={filterContainerRef}
     >
       <div className="filterInfo">
-        <h6 className="filterOptions">filter options:</h6>
+        <h5>filter options:</h5>
         <button
           onClick={resetFilters}
           className={`resetFilters ${

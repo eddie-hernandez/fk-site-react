@@ -36,10 +36,6 @@
   margin: 0vh 5vh 0vh 5vh;
 }
 
-.filterOptions {
-  font-size: 3vh;
-}
-
 .resetFilters {
   background-color: transparent;
   border: 0px;
@@ -69,4 +65,17 @@
   opacity: 1;
   transform: translateY(0%);
   pointer-events: auto;
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .filtersWrapper {
+    flex-direction: column;
+  }
+  .filterSeparator {
+    width: 60%;
+    height: 1px;
+  }
+  .filterLabel {
+    font-size: 2vh;
+  }
 }

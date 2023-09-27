@@ -2,11 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './NewCollectionPoster.css'
 import products from '../../products.json'
+import FrankCollectionPoster from '../../assets/newCollectionPoster.png'
 
 export default function NewCollectionPoster() {
   return (
     <div className="posterContainer">
-      <div className="posterContent">
+      <img src={FrankCollectionPoster} alt="Frank Ocean Collection Poster" className='newCollectionPoster' />
+      {/* <div className="posterContent">
         <h1 className="posterTitle">
           FOLLOWING MY DREAM,
           <br />
@@ -46,7 +48,7 @@ export default function NewCollectionPoster() {
         </div>
         <h1 className="posterTitle">THE FRANK OCEAN COLLECTION.</h1>
         <h3 className="posterSubtitle">AVAILABLE NOW</h3>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -26,7 +26,6 @@
   justify-content: center;
   align-items: center;
   column-gap: 5vh;
-  font-size: 3vh;
 }
 
 .scrolling-text {
@@ -39,5 +38,14 @@
   }
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .scrolling-text {
+    font-size: 2vh;
+  }
+  .scrolling-text-outer {
+    animation: scrollLeft 10s linear infinite;
   }
 }

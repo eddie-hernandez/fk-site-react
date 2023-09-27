@@ -1,11 +1,15 @@
 .posterContainer {
   height: auto;
   width: auto;
-  background-color: #664B83;
+  background-color: #664b83;
   color: white;
 }
 
-.posterTitle {
+.newCollectionPoster {
+  max-width: 100vw;
+}
+
+/* .posterTitle {
   padding-top: 2vh;
   font-size: 12vh;
   line-height: 100px;
@@ -58,4 +62,4 @@
   font-weight: 600;
   text-decoration: underline;
   color: white;
-}
+} */

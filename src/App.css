@@ -2,6 +2,11 @@
   height: 10vh;
 }
 
+.unavailable {
+  color: gray;
+  cursor: not-allowed;
+}
+
 .clickable {
   cursor: pointer;
   transition: opacity 0.3s ease;
@@ -13,6 +18,13 @@
   font-weight: 1000;
   text-align: left;
   padding-left: 9vh;
+}
+
+.collectionTitle {
+  font-size: 5vh;
+  line-height: 100px;
+  font-weight: 1000;
+  -webkit-text-stroke: 0.25vh;
 }
 
 .collectionComponentContainer {
@@ -42,7 +54,6 @@ input[type='text'] {
   border: solid black;
   border-width: 0 0 2px 0;
   width: 20vw;
-  font-size: 2.5vh;
   text-align: left;
   padding-left: 2px;
 }
@@ -57,7 +68,6 @@ input[type='text'] {
 
 .breakText {
   -webkit-text-stroke: 0.1vh;
-  font-size: 3vh;
 }
 
 .productContainer {
@@ -70,11 +80,12 @@ input[type='text'] {
 
 .productTitle {
   font-weight: bold;
-  font-size: 2vh;
+  font-weight: 1000;
+  max-width: 40vh;
 }
 
 .productImg {
-  height: 30vh;
+  height: 40vh;
 }
 
 a {
@@ -100,4 +111,49 @@ select {
 
 select:hover {
   border: 2px solid blue;
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .pageTitle {
+    font-size: 8vw;
+    padding-left: 2vh;
+  }
+
+  .productImg {
+    height: 15vh;
+  }
+
+  .productTitle {
+    max-width: 15vh;
+  }
+
+  .logo {
+    height: 10vw;
+  }
+
+  .breakContainer {
+    height: auto;
+    padding: 1vh 0vh;
+  }
+
+  .breakText {
+    font-size: 2.5vw;
+  }
+
+  .collectionTitle {
+    line-height: 50px;
+    font-size: 4vw;
+    -webkit-text-stroke: 0.15vh;
+  }
+
+  .breakForm {
+    margin-left: 1vh;
+    column-gap: 1vh;
+    row-gap: 2vh;
+  }
+
+  input[type='email'],
+  input[type='text'] {
+    width: 30vw;
+  }
 }
