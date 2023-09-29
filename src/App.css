@@ -2,6 +2,10 @@
   height: 10vh;
 }
 
+.icon {
+  height: 3.5vh;
+}
+
 .unavailable {
   color: gray;
   cursor: not-allowed;
@@ -13,7 +17,7 @@
 }
 
 .pageTitle {
-  font-size: 7vh;
+  font-size: 5vh;
   text-decoration: underline;
   font-weight: 1000;
   text-align: left;
@@ -22,9 +26,13 @@
 
 .collectionTitle {
   font-size: 5vh;
-  line-height: 100px;
   font-weight: 1000;
   -webkit-text-stroke: 0.25vh;
+  position: sticky;
+  top: 13vh;
+  background-color: #d8d5c8;
+  width: 100%;
+  z-index: 9998;
 }
 
 .collectionComponentContainer {
@@ -141,9 +149,10 @@ select:hover {
   }
 
   .collectionTitle {
-    line-height: 50px;
     font-size: 4vw;
     -webkit-text-stroke: 0.15vh;
+    top: 9.5vh;
+    padding: 1vh 0vh;
   }
 
   .breakForm {
@@ -155,5 +164,10 @@ select:hover {
   input[type='email'],
   input[type='text'] {
     width: 30vw;
+  }
+
+  select {
+    font-size: 1.5vh;
+    text-align-last: left;
   }
 }

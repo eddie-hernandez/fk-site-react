@@ -2,15 +2,15 @@ import React from 'react'
 import './Home.css'
 import SectionBreak from '../../components/sectionBreak/SectionBreak'
 import EmailBreak from '../../components/emailBreak/EmailBreak'
-import LatestCollection from '../../components/latestCollection/LatestCollection'
 import NewCollectionPoster from '../../components/newCollectionPoster/NewCollectionPoster'
+import LatestCollection from '../../components/latestCollection/LatestCollection'
 
-export default function Home() {
+export default function Home({ collections }) {
   return (
     <div>
       <NewCollectionPoster />
       <EmailBreak />
-      <LatestCollection />
+      <LatestCollection collections={collections} />
       <SectionBreak />
     </div>
   )

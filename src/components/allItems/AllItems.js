@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import './AllItems.css'
 import ProductFilter from '../productFilter/ProductFilter'
 import { Link } from 'react-router-dom'
 
-// importing shirts from json file
-import products from '../../products.json'
-
-export default function AllItems() {
+export default function AllItems({ products }) {
   const [filteredProducts, setFilteredProducts] = useState(products)
-  const [isFilterClicked, setIsFilterClicked] = useState(false)
   const [filters, setFilters] = useState({
     type: '',
     priceOrder: '',
@@ -16,22 +12,19 @@ export default function AllItems() {
     availableSizes: '',
   })
 
-  useEffect(() => {
-    applyFilters()
-  }, [filters])
-
+  // Function to apply filters
   function applyFilters() {
     let filtered = [...products]
 
     if (filters.type) {
       filtered = filtered.filter(
-        (product) => product.productType === filters.type
+        (product) => product.productType === filters.type.toUpperCase()
       )
     }
 
     if (filters.collection) {
       filtered = filtered.filter(
-        (product) => product.collection === filters.collection
+        (product) => product.collection === filters.collection.toUpperCase()
       )
     }
 
@@ -44,59 +37,22 @@ export default function AllItems() {
     setFilteredProducts(filtered)
   }
 
+  // Function to handle filter changes
   function onFilterChange(newFilters) {
     setFilters(newFilters)
   }
 
-  const filterContainerRef = useRef(null)
-  const filterItemsRef = useRef(null)
-
+  // Apply filters whenever the filters state changes
   useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        filterContainerRef.current &&
-        !filterContainerRef.current.contains(event.target) &&
-        event.target !== filterItemsRef.current
-      ) {
-        setIsFilterClicked(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [])
+    applyFilters()
+  }, [filters])
 
   return (
     <div className="collectionComponentContainer">
-      <div className="pageTitleContainer">
-        <h2 className="pageTitle">ALL ITEMS</h2>
-      </div>
-      <div
-        className={`filterItemsContainer ${
-          isFilterClicked ? 'stickyFilter' : ''
-        }`}
-      >
-        <h6
-          className={`filterItems clickable ${
-            isFilterClicked ? 'activeFilter' : ''
-          }`}
-          onClick={() => {
-            setIsFilterClicked(!isFilterClicked)
-          }}
-          ref={filterItemsRef}
-        >
-          {isFilterClicked ? 'filter -' : 'filter +'}
-        </h6>
-      </div>
       <ProductFilter
         onFilterChange={onFilterChange}
         products={products}
         filters={filters}
-        isFilterClicked={isFilterClicked}
-        filterContainerRef={filterContainerRef}
       />
       {filteredProducts.length === 0 ? (
         <div className="noProductsFound">
@@ -112,10 +68,8 @@ export default function AllItems() {
                   alt={product.title}
                   className="productImg clickable"
                 />
-                <p className="productTitle">
-                  {product.title}
-                  <br />${product.price}
-                </p>
+                <p className="productTitle">{product.title}</p>
+                <p>${product.price}</p>
               </Link>
             </div>
           ))}

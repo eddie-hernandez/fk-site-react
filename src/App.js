@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useLocation } from 'react-router-dom'
 import './App.css'
+import products from './products.json'
 
 // importing components
 import Navbar from './components/navbar/Navbar'
@@ -24,9 +25,14 @@ export default function App() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'instant'
-    });
-  }, [pathname]);
+      behavior: 'instant',
+    })
+  }, [pathname])
+
+  // extracting all collections from products.json
+  const collections = Array.from(
+    new Set(products.map((product) => product.collection))
+  )
 
   return (
     <div className="App">
@@ -34,11 +40,14 @@ export default function App() {
       <Navbar />
       <Routes>
         {/* establishing routes */}
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/shop" element={<Shop />}></Route>
-        <Route path="/cart" element={<Cart />}></Route>
-        <Route path="/archive" element={<Archive />}></Route>
-        <Route path="/about" element={<About />}></Route>
+        <Route path="/" element={<Home collections={collections} />} />
+        <Route
+          path="/shop"
+          element={<Shop collections={collections} products={products} />}
+        />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/archive" element={<Archive />} />
+        <Route path="/about" element={<About />} />
         <Route path="/shop/:productId" element={<Product />} />
         {/* catch all / page not found */}
         <Route path="*" element={<NotFound />} />

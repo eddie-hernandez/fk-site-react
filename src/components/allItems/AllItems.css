@@ -5,24 +5,6 @@
   margin: 5vh 0vh;
 }
 
-.filterItemsContainer {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.stickyFilter {
-  position: sticky;
-  position: -webkit-sticky;
-  top: 22vh;
-  z-index: 9999;
-}
-
-.filterItems {
-  margin-top: -6vh;
-  font-size: 4vh;
-  padding-right: 10vh;
-}
-
 .noProductsFound {
   display: flex;
   flex-direction: column;
@@ -30,4 +12,10 @@
   align-items: center;
   font-size: 5vh;
   padding: 20vh 0vh 30vh 0vh;
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .allProductsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

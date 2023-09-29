@@ -1,0 +1,87 @@
+.singleCollection {
+  height: auto;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+
+.selectorIcon {
+  height: 8vh;
+  width: 8vh;
+}
+
+.selectorIcon.unavailable {
+  opacity: 0.5;
+}
+
+.collectionContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.collectionWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 10vh;
+  margin: 5vh 0vh;
+}
+
+.collectionProductsContainer {
+  display: flex;
+  column-gap: 10vh;
+  margin: 5vh 0vh;
+  height: 50vh;
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .selectorIcon {
+    height: 8vw;
+    width: 8vw;
+  }
+
+  .collectionWrapper {
+    column-gap: 2vh;
+    margin: 2vh 0vh;
+  }
+
+  .collectionProductsContainer {
+    column-gap: 2vh;
+    margin: 2vh 0vh;
+    height: 15vh;
+  }
+
+  .latestCollectionContainer {
+    row-gap: 0vh;
+    margin-top: 5vh;
+  }
+}
+
+@media (min-width: 1001px) {
+  .collectionContainer.desktop .collectionProductsContainer .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .collectionContainer.desktop .collectionProductsContainer .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1000px) {
+  .collectionContainer.mobile .collectionProductsContainer .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .collectionContainer.mobile .collectionProductsContainer .centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,30 +1,41 @@
-.filterDropdownContainer {
+.stickyFilter {
   position: sticky;
   top: 14vh;
   left: 0;
   right: 0;
-  background-color: rgb(255, 176, 133);
-  padding: 1vh 0vh 1vh 6vh;
-  border: solid black;
-  border-width: 3px 0px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  column-gap: 5vh;
-  transform: translateY(-50%);
-  transition:
-    opacity 0.3s ease-in-out,
-    transform 0.3s ease;
-  pointer-events: none;
-  opacity: 0;
-  z-index: 1;
+  z-index: 9998;
 }
 
-.filterInfo {
+.filterDropdownContainer {
+  padding: 1vh 0vh;
+  border: solid transparent;
+  border-width: 2px 0px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 5vh;
+  transition:
+    border 0.2s ease-in,
+    background-color 0.2s ease-in;
+}
+
+.activeFilter {
+  border: solid black;
+  border-width: 2px 0px;
+  background-color: lightgray;
+  justify-content: space-evenly;
+  transition:
+    border 0.3s ease-in,
+    background-color 0.3s ease-in;
+}
+
+.filtersWrapper {
+  display: none;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-in-out;
 }
 
 .filterContainer {
@@ -33,7 +44,7 @@
   align-items: center;
   padding: 0.5vh 0vh;
   column-gap: 2vh;
-  margin: 0vh 5vh 0vh 5vh;
+  margin: 0vh 5vh;
 }
 
 .resetFilters {
@@ -48,34 +59,59 @@
   font-weight: 700;
 }
 
-.filtersWrapper {
-  flex-grow: 0.5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .filterSeparator {
   width: 2px;
   height: 3vh;
   background-color: black;
 }
 
+.inactive {
+  display: flex;
+}
+
 .active {
+  display: flex;
   opacity: 1;
-  transform: translateY(0%);
+  transition: opacity 0.3s ease-in-out;
   pointer-events: auto;
 }
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
+  .filterDropdownContainer {
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    align-items: flex-start;
+    top: 9.8vh;
+  }
+
+  .filterItems {
+    align-self: center;
+  }
+
   .filtersWrapper {
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 2vh;
   }
+
+  .filterContainer {
+    margin: 0vh;
+    padding: 0.5vh 0vh;
+  }
+
   .filterSeparator {
-    width: 60%;
-    height: 1px;
+    display: none;
+    /* height: 1px;
+    width: 100%; */
   }
+
   .filterLabel {
     font-size: 2vh;
+  }
+
+  .resetFilters {
+    margin-top: 2vh;
+    align-self: center;
   }
 }
