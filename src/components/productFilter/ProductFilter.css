@@ -1,4 +1,4 @@
-.stickyFilter {
+.filterDropdownContainer.stickyWrapper {
   position: sticky;
   top: 14vh;
   left: 0;
@@ -7,11 +7,12 @@
 }
 
 .filterDropdownContainer {
-  padding: 1vh 0vh;
+  position: relative;
+  padding: 1vh 6vh;
   border: solid transparent;
   border-width: 2px 0px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   column-gap: 5vh;
   transition:
@@ -19,11 +20,11 @@
     background-color 0.2s ease-in;
 }
 
-.activeFilter {
+.activeWrapper {
   border: solid black;
   border-width: 2px 0px;
   background-color: lightgray;
-  justify-content: space-evenly;
+  justify-content: space-between;
   transition:
     border 0.3s ease-in,
     background-color 0.3s ease-in;
@@ -38,11 +39,21 @@
   transition: opacity 0.2s ease-in-out;
 }
 
+.filterTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterItems {
+  display: flex;
+  column-gap: 1vh;
+}
+
 .filterContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.5vh 0vh;
   column-gap: 2vh;
   margin: 0vh 5vh;
 }
@@ -76,28 +87,82 @@
   pointer-events: auto;
 }
 
+.blankDiv {
+  display: none;
+}
+
+.closerWrapper {
+  display: none;
+}
+
 @media screen and (max-width: 1000px) and (orientation: portrait) {
   .filterDropdownContainer {
+    position: relative;
+    display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 2vh 0vh;
+    row-gap: 2vh;
+
+  }
+
+  .filterDropdownContainer.stickyWrapper {
     justify-content: flex-start;
-    align-items: flex-start;
     top: 9.8vh;
   }
 
+  .filterTitle {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
   .filterItems {
-    align-self: center;
+    display: flex;
+    justify-content: center;
   }
 
   .filtersWrapper {
     flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
-    margin-left: 2vh;
+  }
+
+  .blankDiv {
+    display: block;
+    visibility: hidden;
+  }
+
+  .activeWrapper .blankDiv {
+    visibility: visible;
+  }
+
+  .closerWrapper {
+    display: block;
+    visibility: hidden;
+  }
+
+  .activeWrapper .closerWrapper {
+    visibility: visible;
+    justify-self: flex-end;
+  }
+
+  .closerWrapper .bar {
+    height: 3px;
+  }
+
+  .closerWrapper .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(0px, 6px);
+  }
+
+  .closerWrapper .bar:nth-child(2) {
+    transform: rotate(45deg) translate(0px, -6px);
   }
 
   .filterContainer {
     margin: 0vh;
-    padding: 0.5vh 0vh;
+    justify-content: center;
+    align-items: center;
   }
 
   .filterSeparator {

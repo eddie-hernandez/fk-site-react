@@ -17,6 +17,8 @@ import Cart from './pages/cart/Cart'
 import NotFound from './pages/NotFound/NotFound'
 import Shop from './pages/shop/Shop'
 import Home from './pages/home/Home'
+import CollectionPage from './pages/collectionPage/CollectionPage'
+import ProductTypePage from './pages/productTypePage/ProductTypePage'
 
 export default function App() {
   const { pathname } = useLocation()
@@ -34,16 +36,28 @@ export default function App() {
     new Set(products.map((product) => product.collection))
   )
 
+  const productTypes = Array.from(
+    new Set(products.map((product) => product.productType))
+  )
+
   return (
     <div className="App">
       <ScrollerText />
-      <Navbar />
+      <Navbar collections={collections} productTypes={productTypes} />
       <Routes>
         {/* establishing routes */}
         <Route path="/" element={<Home collections={collections} />} />
         <Route
           path="/shop"
           element={<Shop collections={collections} products={products} />}
+        />
+        <Route
+          path="/shop/collections/:collectionName"
+          element={<CollectionPage collections={collections} />}
+        />
+        <Route
+          path="/shop/products/:productType"
+          element={<ProductTypePage products={products} />}
         />
         <Route path="/cart" element={<Cart />} />
         <Route path="/archive" element={<Archive />} />

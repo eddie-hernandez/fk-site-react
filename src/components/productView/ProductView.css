@@ -18,4 +18,8 @@
   .allProductsContainer {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .collectionComponentContainer#productView {
+    padding: 0vh;
+  }
 }

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import './AllItems.css'
+import './ProductView.css'
 import ProductFilter from '../productFilter/ProductFilter'
 import { Link } from 'react-router-dom'
+import SingleProduct from '../singleProduct/SingleProduct'
 
-export default function AllItems({ products }) {
+export default function ProductView({ products }) {
   const [filteredProducts, setFilteredProducts] = useState(products)
   const [filters, setFilters] = useState({
     type: '',
@@ -45,10 +46,10 @@ export default function AllItems({ products }) {
   // Apply filters whenever the filters state changes
   useEffect(() => {
     applyFilters()
-  }, [filters])
+  }, [filters, products])
 
   return (
-    <div className="collectionComponentContainer">
+    <div className="collectionComponentContainer" id='productView'>
       <ProductFilter
         onFilterChange={onFilterChange}
         products={products}
@@ -63,13 +64,7 @@ export default function AllItems({ products }) {
           {filteredProducts.map((product) => (
             <div className="productContainer" key={product.id}>
               <Link to={`/shop/${product.id}`} key={product.id}>
-                <img
-                  src={process.env.PUBLIC_URL + product.imageSrc}
-                  alt={product.title}
-                  className="productImg clickable"
-                />
-                <p className="productTitle">{product.title}</p>
-                <p>${product.price}</p>
+                <SingleProduct product={product} />
               </Link>
             </div>
           ))}

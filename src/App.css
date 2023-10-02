@@ -36,11 +36,12 @@
 }
 
 .collectionComponentContainer {
-  padding: 5vh 0vh 10vh 0vh;
+  padding: 5vh 0vh;
+  position: relative;
 }
 
 .breakContainer {
-  height: 12vh;
+  height: 10vh;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
   padding: 0vh 10vh;
@@ -110,11 +111,12 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: transparent;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 2px solid transparent;
   padding: 0.5vh 1vh;
   font-size: 2vh;
   font-weight: 400;
+  width: 20vh;
 }
 
 select:hover {

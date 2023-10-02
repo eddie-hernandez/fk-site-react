@@ -20,11 +20,35 @@
   padding: 10px;
 }
 
+.navbarLink.clickable:hover {
+  opacity: 0.5;
+}
+
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
   column-gap: 10vh;
+}
+
+.shopNavWrapper {
+  position: relative;
+}
+
+.shopNav {
+  display: none;
+}
+
+.shopNav.open {
+  position: absolute;
+  background-color: lightgray;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  align-items: flex-start;
+  width: 40vh;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .cart-container {
@@ -50,28 +74,28 @@
 
   .navbar {
     display: none;
+    column-gap: 10vw;
   }
 
   .navbarContainer.menuOpen .navbar {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     position: absolute;
     top: 80px;
     left: 0;
     right: 0;
-    background-color: rgb(255, 176, 133);
+    background-color: lightgray;
     padding: 1vh 0vh 1vh 3vh;
     border: solid black;
     border-width: 3px 0px;
     z-index: 999;
   }
 
-  .lineBreak {
-    width: 90%;
-    margin: 1vh 0vh;
-    height: 1px;
+  /* .lineBreak {
+    height: 20px;
+    width: 1px;
     background-color: black;
-  }
+  } */
 
   .navbarContainer.menuOpen .bar:nth-child(1) {
     transform: rotate(-45deg) translate(-5px, 6px);

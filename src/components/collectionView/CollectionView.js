@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import SingleCollection from '../singleCollection/SingleCollection'
 import products from '../../products.json'
 import './CollectionView.css'
@@ -9,7 +9,13 @@ export default function CollectionView({ collectionList }) {
     startIndex: 0,
   }))
 
+  console.log(initialCollections)
+
   const [collections, setCollections] = useState(initialCollections)
+
+  useEffect(() => {
+    setCollections(initialCollections)
+  }, [collectionList])
 
   function getPaginatedProducts(collectionTitle, startIndex, itemsPerPage) {
     const filteredProducts = products.filter(

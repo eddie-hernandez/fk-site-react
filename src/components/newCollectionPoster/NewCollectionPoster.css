@@ -9,6 +9,15 @@
   max-width: 100vw;
 }
 
+.newCollectionPoster.clickable {
+transition: filter 0.1s ease-in-out;
+}
+
+.newCollectionPoster.clickable:hover {
+opacity: 1;
+filter: brightness(110%);
+}
+
 /* .posterTitle {
   padding-top: 2vh;
   font-size: 12vh;

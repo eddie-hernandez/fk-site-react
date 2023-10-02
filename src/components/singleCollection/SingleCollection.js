@@ -4,6 +4,7 @@ import Rewind from '../../assets/icons/rewind.svg'
 import Forward from '../../assets/icons/forward.svg'
 import products from '../../products.json'
 import './SingleCollection.css'
+import SingleProduct from '../singleProduct/SingleProduct'
 
 export default function SingleCollection({
   collection,
@@ -69,17 +70,7 @@ export default function SingleCollection({
           }`}
         >
           {paginatedProducts.map((product) => (
-            <div key={product.id} className="productContainer">
-              <Link to={`/shop/${product.id}`}>
-                <img
-                  src={process.env.PUBLIC_URL + product.imageSrc}
-                  alt={product.title}
-                  className="productImg clickable"
-                />
-                <p className="productTitle">{product.title}</p>
-                <p>${product.price}</p>
-              </Link>
-            </div>
+            <SingleProduct product={product} key={product.id} />
           ))}
         </div>
         <img

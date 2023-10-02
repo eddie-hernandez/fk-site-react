@@ -1,13 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+// import products from '../../products.json'
 import './NewCollectionPoster.css'
-import products from '../../products.json'
 import FrankCollectionPoster from '../../assets/newCollectionPoster.png'
 
 export default function NewCollectionPoster() {
   return (
     <div className="posterContainer">
-      <img src={FrankCollectionPoster} alt="Frank Ocean Collection Poster" className='newCollectionPoster' />
+      {/* <Link to='/shop/collections' */}
+      <img
+        src={FrankCollectionPoster}
+        alt="Frank Ocean Collection Poster"
+        className="newCollectionPoster clickable"
+      />
       {/* <div className="posterContent">
         <h1 className="posterTitle">
           FOLLOWING MY DREAM,
