@@ -117,6 +117,7 @@ select {
   font-size: 2vh;
   font-weight: 400;
   width: 20vh;
+  color: black;
 }
 
 select:hover {
