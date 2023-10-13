@@ -16,6 +16,10 @@
   transition: opacity 0.3s ease;
 }
 
+.clickable:hover {
+  opacity: 0.5;
+}
+
 .pageTitle {
   font-size: 5vh;
   text-decoration: underline;
@@ -102,10 +106,6 @@ input[type='text'] {
 a {
   color: black;
   text-decoration: none;
-}
-
-.clickable:hover {
-  opacity: 0.75;
 }
 
 select {
