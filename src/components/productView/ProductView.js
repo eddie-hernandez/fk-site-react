@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './ProductView.css'
 import ProductFilter from '../productFilter/ProductFilter'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import SingleProduct from '../singleProduct/SingleProduct'
 
 export default function ProductView({ products }) {
@@ -12,6 +12,10 @@ export default function ProductView({ products }) {
     collection: '',
     availableSizes: '',
   })
+
+  const location = useLocation()
+
+  const locationProduct = location.pathname.split('/').pop()
 
   // Function to apply filters
   function applyFilters() {
@@ -49,12 +53,34 @@ export default function ProductView({ products }) {
   }, [filters, products])
 
   return (
-    <div className="collectionComponentContainer" id='productView'>
+    <div className="collectionComponentContainer" id="productView">
       <ProductFilter
         onFilterChange={onFilterChange}
         products={products}
         filters={filters}
       />
+      <h3
+        className={`productPageTitle
+          ${
+            locationProduct === 'products'
+              ? 'pageTitle'
+              : 'productLocationTitle'
+          }
+        `}
+      >
+        {locationProduct === 'products'
+          ? `ALL PRODUCTS ${
+              filters.type ||
+              filters.priceOrder ||
+              filters.collection ||
+              filters.availableSizes
+                ? '(FILTERED)'
+                : ''
+            }`
+          : locationProduct.charAt(locationProduct.length - 1) === 's'
+          ? locationProduct
+          : `${locationProduct}s`}
+      </h3>
       {filteredProducts.length === 0 ? (
         <div className="noProductsFound">
           <h3>No products here...yet!</h3>

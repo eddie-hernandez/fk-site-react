@@ -1,4 +1,4 @@
-.productDetails {
+.productDetailsWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,12 +11,6 @@
 }
 
 .detailedProductTitle {
-  font-weight: bold;
-  font-size: 3vh;
-  font-style: italic;
-}
-
-.detailedProductPrice {
   font-weight: bold;
   font-size: 3vh;
   font-style: italic;
@@ -86,4 +80,36 @@
   justify-content: center;
   align-items: center;
   column-gap: 4vh;
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .productDetailsWrapper {
+    margin-top: 5vh;
+    flex-direction: column;
+  }
+
+  .productDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .detailedProductImg {
+    height: 80vw;
+  }
+
+  .detailedProductTitle {
+    width: 100%;
+    max-width: 60vw;
+    font-size: 2vh;
+  }
+
+  .sizeContainer {
+    margin: 2vh 0vh;
+  }
+
+  .sizeLabel {
+    font-size: 3vh;
+  }
 }

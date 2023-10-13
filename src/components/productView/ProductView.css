@@ -14,6 +14,14 @@
   padding: 20vh 0vh 30vh 0vh;
 }
 
+.productPageTitle {
+  margin-top: 5vh;
+}
+
+.productLocationTitle {
+  text-transform: capitalize;
+}
+
 @media screen and (max-width: 1000px) and (orientation: portrait) {
   .allProductsContainer {
     grid-template-columns: repeat(2, 1fr);

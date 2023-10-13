@@ -7,3 +7,16 @@
 .backArrow {
   padding-right: 1vh;
 }
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .backNavigator {
+    position: sticky;
+    top: 8vh;
+    background-color: #d8d5c8;
+    padding: 2vh 0vh 1vh 2vh;
+  }
+
+  .backNavigator h4 {
+    font-size: 2vh;
+  }
+}

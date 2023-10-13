@@ -20,15 +20,15 @@ export default function ProductDetails() {
   }
 
   return (
-    <div className="productDetails">
+    <div className="productDetailsWrapper">
       <img
         src={process.env.PUBLIC_URL + product.imageSrc}
         alt={product.title}
         className="detailedProductImg"
       />
-      <div>
+      <div className="productDetails">
         <h2 className="detailedProductTitle">{product.title}</h2>
-        <p className="detailedProductPrice">${product.price}</p>
+        <h2 className="detailedProductTitle">${product.price}</h2>
         <div className="sizeContainer">
           <p className="sizeTitle">size:</p>
           <div

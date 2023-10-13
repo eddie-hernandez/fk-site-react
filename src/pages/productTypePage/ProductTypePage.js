@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import './ProductTypePage.css'
 import ProductView from '../../components/productView/ProductView'
+import EmailBreak from '../../components/emailBreak/EmailBreak'
 
 export default function ProductTypePage({ products }) {
   const { productType } = useParams()
@@ -21,6 +22,7 @@ export default function ProductTypePage({ products }) {
   return (
     <div>
       <ProductView products={displayedType} />
+      <EmailBreak />
     </div>
   )
 }

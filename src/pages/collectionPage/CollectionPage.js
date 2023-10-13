@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './CollectionPage.css';
 import CollectionView from '../../components/collectionView/CollectionView';
+import SectionBreak from '../../components/sectionBreak/SectionBreak';
 
 export default function CollectionPage({ collections }) {
   const { collectionName } = useParams();
@@ -25,6 +26,7 @@ export default function CollectionPage({ collections }) {
   return (
     <div>
       <CollectionView collectionList={displayedCollection} />
+      <SectionBreak />
     </div>
   );
 }

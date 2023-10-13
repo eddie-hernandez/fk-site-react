@@ -47,10 +47,8 @@ export default function App() {
       <Routes>
         {/* establishing routes */}
         <Route path="/" element={<Home collections={collections} />} />
-        <Route
-          path="/shop"
-          element={<Shop collections={collections} products={products} />}
-        />
+        <Route path="shop/products" element={<Shop collections={collections} products={products} />} />
+        <Route path="shop/collections" element={<Shop collections={collections} products={products} />} />
         <Route
           path="/shop/collections/:collectionName"
           element={<CollectionPage collections={collections} />}

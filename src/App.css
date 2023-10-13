@@ -141,6 +141,10 @@ select:hover {
     height: 10vw;
   }
 
+  .icon {
+    height: 2.5vh;
+  }
+
   .breakContainer {
     height: auto;
     padding: 1vh 0vh;
