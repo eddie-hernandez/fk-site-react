@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 // import fkLogo from '../../assets/logos/Fullkit.png'
 import fkLogo2 from '../../assets/logos/coollogo_com-28275806.gif'
-import { Link, useNavigate } from 'react-router-dom'
+import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom'
 import './Navbar.css'
 
 export default function Navbar({ collections, productTypes }) {
@@ -11,6 +11,7 @@ export default function Navbar({ collections, productTypes }) {
   const [itemNavOpen, setItemNavOpen] = useState(false)
   const [collectionNavOpen, setCollectionNavOpen] = useState(false)
   const shopNavRef = useRef()
+  const location = useLocation()
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -70,7 +71,9 @@ export default function Navbar({ collections, productTypes }) {
         <div className="shopNavWrapper">
           <h6
             onClick={() => setShopNavOpen(!shopNavOpen)}
-            className={`navbarLink clickable ${shopNavOpen ? 'open' : ''}`}
+            className={`navbarLink clickable ${shopNavOpen ? 'open' : ''} ${
+              location.pathname.includes('shop') ? 'active' : ''
+            }`}
           >
             SHOP
           </h6>
@@ -95,7 +98,7 @@ export default function Navbar({ collections, productTypes }) {
                       style={{ textTransform: 'capitalize' }}
                       className="shopNavItem clickable"
                     >
-                      {type.charAt(type.length -1) === 's' ? type : `${type}s`}
+                      {type.charAt(type.length - 1) === 's' ? type : `${type}s`}
                     </p>
                   </Link>
                 ))}
@@ -130,25 +133,21 @@ export default function Navbar({ collections, productTypes }) {
           </div>
         </div>
         <div className="lineBreak" />
-        <h6
-          onClick={() => {
-            navigate('/archive')
-            closeNav()
-          }}
+        <NavLink
+          to="/archive"
+          onClick={() => closeNav()}
           className="navbarLink clickable"
         >
-          ARCHIVE
-        </h6>
+          <h6>ARCHIVE</h6>
+        </NavLink>
         <div className="lineBreak" />
-        <h6
-          onClick={() => {
-            navigate('/about')
-            closeNav()
-          }}
+        <NavLink
+          to="/about"
+          onClick={() => closeNav()}
           className="navbarLink clickable"
         >
-          ABOUT
-        </h6>
+          <h6>ABOUT</h6>
+        </NavLink>
       </nav>
       <div className="cart-container">
         <h6>CART (0)</h6>

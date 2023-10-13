@@ -70,6 +70,10 @@
   transition: 0.2s;
 }
 
+.navbarLink.active {
+  color: #b94c48;
+}
+
 /* Media query for smaller screens */
 @media screen and (max-width: 1000px) and (orientation: portrait) {
   .menuButton {

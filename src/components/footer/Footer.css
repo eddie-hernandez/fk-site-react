@@ -24,3 +24,9 @@
 .copyright {
   font-size: 1.5vh;
 }
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .footerContainer {
+    padding: 2vh 0vh 5vh 0vh;
+  }
+}

@@ -23,3 +23,5 @@ export default function Product() {
     </div>
   )
 }
+
+// TO DO: MODALS FOR WASH INSTRUCTIONS AND MEASUREMENT GUIDE
