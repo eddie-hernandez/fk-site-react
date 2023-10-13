@@ -5,9 +5,7 @@ export default function EmailBreak() {
   return (
     <div className="breakContainer" id="emailBreak">
       <h6 className="breakText">
-        Got an email address? Well, we've got a newsletter.
-        <br />
-        Subscribe Here:
+        Don't miss the latest drop. Subscribe to the newsletter {'-->'}
       </h6>
       <form className="breakForm">
         <input type="email" id="email" placeholder="Email Address" required />

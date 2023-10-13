@@ -46,7 +46,7 @@
   border-bottom: 2px solid black;
   padding: 0vh 10vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -62,7 +62,7 @@ input[type='text'] {
   background-color: transparent;
   border: solid black;
   border-width: 0 0 2px 0;
-  width: 20vw;
+  width: 30vw;
   text-align: left;
   padding-left: 2px;
 }
@@ -78,6 +78,7 @@ input[type='text'] {
 
 .breakText {
   -webkit-text-stroke: 0.1vh;
+  max-width: 20vw;
 }
 
 .productContainer {
@@ -126,6 +127,14 @@ select:hover {
 }
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
+  button {
+    padding: 0px;
+  }
+
+  button h6 {
+    max-width: 25vw;
+  }
+
   .pageTitle {
     font-size: 8vw;
     padding-left: 2vh;
@@ -150,10 +159,12 @@ select:hover {
   .breakContainer {
     height: auto;
     padding: 1vh 0vh;
+    justify-content: space-evenly;
   }
 
   .breakText {
     font-size: 2.5vw;
+    max-width: 30vw;
   }
 
   .collectionTitle {

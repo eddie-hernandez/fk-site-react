@@ -5,7 +5,7 @@ export default function SectionBreak() {
   return (
     <div className="breakContainer" id="kitBreak">
       <h6 className="breakText">
-        what kit would you like to see us make next?
+        What kit would you like to see us make next?
       </h6>
       <form className="breakForm">
         <input type="text" id="kit" placeholder="Kit Proposal" required />
