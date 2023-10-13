@@ -136,17 +136,13 @@ export default function Navbar({ collections, productTypes }) {
         <NavLink
           to="/archive"
           onClick={() => closeNav()}
-          className="navbarLink clickable"
+          className="clickable"
         >
-          <h6>ARCHIVE</h6>
+          <h6 className="navbarLink">ARCHIVE</h6>
         </NavLink>
         <div className="lineBreak" />
-        <NavLink
-          to="/about"
-          onClick={() => closeNav()}
-          className="navbarLink clickable"
-        >
-          <h6>ABOUT</h6>
+        <NavLink to="/about" onClick={() => closeNav()} className="clickable">
+          <h6 className="navbarLink">ABOUT</h6>
         </NavLink>
       </nav>
       <div className="cart-container">

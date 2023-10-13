@@ -89,9 +89,7 @@ export default function ProductView({ products }) {
         <div className="allProductsContainer">
           {filteredProducts.map((product) => (
             <div className="productContainer" key={product.id}>
-              <Link to={`/shop/${product.id}`} key={product.id}>
-                <SingleProduct product={product} />
-              </Link>
+              <SingleProduct product={product} />
             </div>
           ))}
         </div>

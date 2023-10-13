@@ -61,7 +61,7 @@ input[type='email'],
 input[type='text'] {
   background-color: transparent;
   border: solid black;
-  border-bottom-width: 2px;
+  border-width: 0px 0px 2px 0px;
   width: 30vw;
   text-align: left;
   padding-left: 2px;
@@ -118,8 +118,12 @@ select {
   padding: 0.5vh 1vh;
   font-size: 2vh;
   font-weight: 400;
-  width: 20vh;
   color: black;
+  font-family: 'DM Sans', sans-serif;
+}
+
+option {
+  font-family: 'DM Sans', sans-serif;
 }
 
 select:hover {
