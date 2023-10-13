@@ -1,0 +1,50 @@
+.carouselSlide {
+  position: relative;
+  width: 50vw;
+  height: 50vw;
+  text-align: center;
+  background: #333;
+}
+
+.carouselimg {
+  width: 100%;
+  height: 100%;
+  object-position: 0 100%;
+}
+
+.carouselCaption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+  padding: 50px;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+  background: none;
+}
+
+.carousel .control-arrow:before {
+  content: '';
+  border: 0px;
+}
+
+.carousel .control-prev.control-arrow:before {
+  border-right: 0px;
+}
+
+.carousel .control-next.control-arrow:before {
+  border-left: 0px;
+}
+
+.control-arrow.control-next::before {
+  font-size: 5vh;
+  content: '▶'
+}
+
+.control-arrow.control-prev::before {
+  font-size: 5vh;
+  content: '◀'
+}
