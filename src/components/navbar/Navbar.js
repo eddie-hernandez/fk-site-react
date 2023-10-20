@@ -7,6 +7,8 @@ import './Navbar.css'
 export default function Navbar({ collections, productTypes }) {
   const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isPhotoCarouselInViewport, setPhotoCarouselInViewport] =
+    useState(false)
   const [shopNavOpen, setShopNavOpen] = useState(false)
   const [itemNavOpen, setItemNavOpen] = useState(false)
   const [collectionNavOpen, setCollectionNavOpen] = useState(false)
@@ -26,6 +28,41 @@ export default function Navbar({ collections, productTypes }) {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [])
+
+  // adding an intersection observer to detect when the PhotoCarousel component enters or exits the viewport
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+    }
+  
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setPhotoCarouselInViewport(true);
+          document.querySelector('.navbarContainer').classList.remove('fade-in');
+        } else {
+          setPhotoCarouselInViewport(false);
+          document.querySelector('.navbarContainer').classList.add('fade-in');
+        }
+      })
+    }
+  
+    const observer = new IntersectionObserver(callback, options)
+  
+    // attach the observer to the PhotoCarousel element
+    const photoCarousel = document.querySelector('.carouselContainer')
+    if (photoCarousel) {
+      observer.observe(photoCarousel)
+    }
+  
+    return () => {
+      if (photoCarousel) {
+        observer.unobserve(photoCarousel)
+      }
+    }
+  }, [location]);
+  
 
   function closeNav() {
     setMenuOpen(false)
@@ -48,7 +85,9 @@ export default function Navbar({ collections, productTypes }) {
 
   return (
     <div
-      className={`navbarContainer ${menuOpen ? 'menuOpen' : ''}`}
+      className={`navbarContainer ${
+        isPhotoCarouselInViewport ? '' : 'noCarousel'
+      } ${menuOpen ? 'menuOpen' : ''}`}
       ref={shopNavRef}
     >
       <button
@@ -68,7 +107,9 @@ export default function Navbar({ collections, productTypes }) {
         onClick={() => navigate('/')}
       />
       <nav className={`navbar ${menuOpen ? 'open' : ''}`}>
-        <div className="shopNavWrapper">
+        <div
+          className={`shopNavWrapper ${!isPhotoCarouselInViewport ? '' : 'invisibleNavLink'}`}
+        >
           <h6
             onClick={() => setShopNavOpen(!shopNavOpen)}
             className={`navbarLink clickable ${shopNavOpen ? 'open' : ''} ${
@@ -136,16 +177,22 @@ export default function Navbar({ collections, productTypes }) {
         <NavLink
           to="/archive"
           onClick={() => closeNav()}
-          className="clickable"
+          className={`clickable ${!isPhotoCarouselInViewport ? '' : 'invisibleNavLink'}`}
         >
           <h6 className="navbarLink">ARCHIVE</h6>
         </NavLink>
         <div className="lineBreak" />
-        <NavLink to="/about" onClick={() => closeNav()} className="clickable">
+        <NavLink
+          to="/about"
+          onClick={() => closeNav()}
+          className={`clickable ${!isPhotoCarouselInViewport ? '' : 'invisibleNavLink'}`}
+        >
           <h6 className="navbarLink">ABOUT</h6>
         </NavLink>
       </nav>
-      <div className="cart-container">
+      <div
+        className={`cart-container ${!isPhotoCarouselInViewport ? '' : 'invisibleNavLink'}`}
+      >
         <h6>CART (0)</h6>
       </div>
     </div>

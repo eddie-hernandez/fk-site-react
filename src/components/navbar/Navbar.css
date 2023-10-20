@@ -1,15 +1,37 @@
+@keyframes fadeInOut {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  1% {
+    display: flex;
+    opacity: 0;
+  }
+  100% {
+    display: flex;
+    opacity: 1;
+  }
+}
+
 .navbarContainer {
-  display: flex;
+  display: none;
   justify-content: space-around;
   align-items: center;
   padding: 2vh 0vh;
   font-size: 2vh;
   position: sticky;
   z-index: 9999;
-  top: 0px;
+  top: -1px;
   background-color: #d8d5c8;
-  /* border: solid black;
-  border-width: 2px 0; */
+  animation: fadeInOut 0.5s ease-in-out;
+}
+
+.invisibleNavLink {
+  visibility: hidden;
+}
+
+.noCarousel {
+  display: flex;
 }
 
 .menuButton {
@@ -47,6 +69,7 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: flex-start;
   width: 40vh;
+  padding: 2vh;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -59,7 +82,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 16vh;
 }
 
 .bar {
@@ -78,6 +100,14 @@
 @media screen and (max-width: 1000px) and (orientation: portrait) {
   .menuButton {
     display: block;
+  }
+
+  .invisibleNavLink {
+    visibility: visible;
+  }
+
+  .navbarContainer {
+    display: flex;
   }
 
   .navbar {
@@ -117,7 +147,7 @@
     align-items: flex-start;
     padding: 2vh 0vh;
     row-gap: 2vh;
-    border-width: 2px 2px 2px 0px
+    border-width: 2px 2px 2px 0px;
   }
 
   .shopNavCol {

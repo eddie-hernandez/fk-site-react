@@ -11,9 +11,8 @@ export default function Home({ collections }) {
     <div>
       {/* <NewCollectionPoster /> */}
       <PhotoCarousel />
-      <EmailBreak />
       <LatestCollection collections={collections} />
-      <SectionBreak />
+      <EmailBreak />
     </div>
   )
 }

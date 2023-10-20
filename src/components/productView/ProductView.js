@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './ProductView.css'
 import ProductFilter from '../productFilter/ProductFilter'
-import { Link, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import SingleProduct from '../singleProduct/SingleProduct'
 
 export default function ProductView({ products }) {
