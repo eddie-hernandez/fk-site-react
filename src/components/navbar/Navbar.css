@@ -3,10 +3,6 @@
     display: none;
     opacity: 0;
   }
-  1% {
-    display: flex;
-    opacity: 0;
-  }
   100% {
     display: flex;
     opacity: 1;
@@ -15,15 +11,17 @@
 
 .navbarContainer {
   display: none;
-  justify-content: space-around;
-  align-items: center;
   padding: 2vh 0vh;
   font-size: 2vh;
   position: sticky;
   z-index: 9999;
   top: -1px;
+  background-color: transparent;
+}
+
+.navbarContainer.noCarousel {
+  display: flex;
   background-color: #d8d5c8;
-  animation: fadeInOut 0.5s ease-in-out;
 }
 
 .invisibleNavLink {
@@ -31,7 +29,15 @@
 }
 
 .noCarousel {
+  background-color: #d8d5c8;
+}
+
+.navbarWrapper.noCarousel {
   display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  align-items: center;
+  animation: fadeInOut 0.5s ease-in-out;
 }
 
 .menuButton {
@@ -108,6 +114,18 @@
 
   .navbarContainer {
     display: flex;
+    background-color: #d8d5c8;
+  }
+
+  .navbarWrapper {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .navbarWrapper.noCarousel {
+    animation: fadeInOut none;
   }
 
   .navbar {

@@ -2,12 +2,15 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import products from '../../products.json'
 import './ProductDetails.css'
+import { MeasurementModal, WashModal } from '../productModals/ProductModals'
 
 export default function ProductDetails() {
   const { productId } = useParams()
   const product = products.find((p) => p.id === productId)
   const [selectedSize, setSelectedSize] = useState('')
   const [availableSizes, setAvailableSizes] = useState([])
+  const [openInstructions, setOpenInstructions] = useState(false)
+  const [openGuide, setOpenGuide] = useState(false)
 
   useEffect(() => {
     if (product) {
@@ -124,8 +127,11 @@ export default function ProductDetails() {
           {availableSizes.length === 0 ? 'SOLD OUT' : 'ADD TO CART'}
         </button>
         <div className="otherInfoContainer">
-          <button className="otherInfo clickable">WASH INSTRUCTIONS</button>
-          <button className="otherInfo clickable">MEASUREMENT GUIDE</button>
+          <WashModal
+            openInstructions={openInstructions}
+            setOpenInstructions={setOpenInstructions}
+          />
+          <MeasurementModal openGuide={openGuide} setOpenGuide={setOpenGuide} />
         </div>
       </div>
     </div>

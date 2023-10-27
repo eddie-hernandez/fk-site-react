@@ -14,7 +14,7 @@ export default function LatestCollection({ collections }) {
 
   return (
     <div className="collectionComponentContainer">
-      {/* <h2 className="pageTitle">SHOP THE LATEST</h2> */}
+      <h2 className="pageTitle">SHOP THE LATEST</h2>
       <CollectionView collectionList={latestCollections} />
     </div>
   )
