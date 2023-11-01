@@ -2,10 +2,17 @@
   display: flex;
   flex-direction: column;
   margin: 5vh 0vh;
-  row-gap: 5vh;
+  row-gap: 10vh;
 }
 
 .archivePage .pageTitle {
   text-align: center;
   padding-left: 0vh;
+}
+
+@media screen and (max-width: 1000px) and (orientation: portrait) {
+  .archivePage {
+    margin: 2.5vh 0vh;
+    row-gap: 5vh;
+  }
 }

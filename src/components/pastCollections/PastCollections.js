@@ -1,6 +1,5 @@
 import React from 'react'
 import collections from '../../collections.json'
-import products from '../../products.json'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -26,7 +25,7 @@ export default function PastCollections() {
           <div key={index} className="collection-slide">
             <img src={collection.imageSrc} alt={collection.collectionTitle} />
             <div className="collection-title">
-              <h6>{collection.collectionTitle}</h6>
+              <h6 className='pastCollectionTitle'>{collection.collectionTitle}</h6>
             </div>
           </div>
         ))}

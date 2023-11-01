@@ -21,12 +21,12 @@ export default function PastEvents() {
         <u>PAST EVENTS</u>
       </h3>
       <Slider {...settings}>
-        {events.map((collection, index) => (
-          <div key={index} className="collection-slide">
-            {/* <img src={collection.imageSrc} alt={collection.collectionTitle} />
-            <div className="collection-title">
-              <h6>{collection.collectionTitle}</h6>
-            </div> */}
+        {events.map((event, index) => (
+          <div key={index} className="event-slide">
+            <img src={event.imageSrc} alt={event.eventTitle} />
+            <div className="event-title">
+              <h6 className="pastEventTitle">{event.eventTitle}</h6>
+            </div>
           </div>
         ))}
       </Slider>

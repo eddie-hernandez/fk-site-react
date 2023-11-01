@@ -1,5 +1,18 @@
 [
   {
-    
+    "imageSrc": "/events/kittedoutnyc.jpeg",
+    "eventTitle": "Kitted Out NYC"
+  },
+  {
+    "imageSrc": "/events/kittedoutla.jpeg",
+    "eventTitle": "Kitted Out LA"
+  },
+  {
+    "imageSrc": "/events/halloweenparty.jpeg",
+    "eventTitle": "Halloween Party @ The Ground"
+  },
+  {
+    "imageSrc": "/events/rockefellernight.jpeg",
+    "eventTitle": "Full Kit Night @ Rockefeller Center"
   }
 ]
