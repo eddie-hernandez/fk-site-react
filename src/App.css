@@ -103,6 +103,35 @@ input[type='text'] {
   height: 40vh;
 }
 
+.dragWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.dragHandleContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 30vw;
+  height: 20px;
+  border-radius: 12px;
+  background-color: lightgray;
+  border: 2px solid gray;
+}
+
+.dragHandle {
+  position: absolute;
+  width: 30px;
+  height: 20px;
+  background-color: blue;
+  border-radius: 10px;
+  cursor: grab;
+}
+
+.dragHandle:active {
+  cursor: grabbing;
+}
+
 a {
   color: black;
   text-decoration: none;
@@ -187,6 +216,23 @@ select:hover {
     margin-left: 1vh;
     column-gap: 1vh;
     row-gap: 2vh;
+  }
+
+  .dragHandleContainer {
+    width: 60vw;
+    height: 20px;
+    border-radius: 12px;
+    background-color: lightgray;
+    border: 2px solid gray;
+  }
+  
+  .dragHandle {
+    position: absolute;
+    width: 30px;
+    height: 20px;
+    background-color: blue;
+    border-radius: 10px;
+    cursor: grab;
   }
 
   input[type='email'],

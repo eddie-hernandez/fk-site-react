@@ -1,4 +1,5 @@
 .pastCollectionsWrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   row-gap: 5vh;
@@ -15,6 +16,17 @@
 
 .collection-slide {
   opacity: 0.5;
+  transition: transform 0.3s ease;
+}
+
+.collection-slide.tilted {
+  transform: perspective(1000px) rotateY(30deg); /* Tilt effect for the image */
+}
+
+/* Reset transform for the current slide and next slides */
+.slick-center .collection-slide img {
+  transform: none;
+  transition: transform 0.3s ease;
 }
 
 .slick-center .collection-slide {
@@ -51,6 +63,24 @@
 .pastCollectionTitle {
   font-weight: 1000;
   -webkit-text-stroke: 0.25vh;
+}
+
+.customSlider {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.sliderButton {
+  cursor: pointer;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.sliderButton:hover {
+  background-color: #eee;
 }
 
 @media screen and (max-width: 1000px) and (orientation: portrait) {
